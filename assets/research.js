@@ -65,7 +65,7 @@
       rDownload:['이미지 저장 ↓','Download image ↓']
     };
     for(const [id,pair] of Object.entries(texts))el(id).textContent=bi(...pair);
-    document.querySelectorAll('[data-workflow]').forEach(b=>b.textContent=b.dataset.workflow==='culture'?bi('세포 배양','Cell culture'):b.dataset.workflow==='fibrosis'?bi('조직 섬유화','Tissue fibrosis'):bi('세포 이동','Cell migration'));
+    document.querySelectorAll('[data-workflow]').forEach(b=>b.textContent=b.dataset.workflow==='culture'?bi('세포 배양 분석','Cell culture analysis'):b.dataset.workflow==='fibrosis'?bi('조직 섬유화 분석','Tissue fibrosis analysis'):bi('세포 이미지 워크스페이스','Cell image workspace'));
     document.querySelectorAll('[data-r-view]').forEach(b=>{b.textContent=b.dataset.rView==='original'?bi('원본 이미지','Original'):b.dataset.rView==='analysis'?bi('2D 분석','2D analysis'):bi('나란히 보기','Side by side');b.setAttribute('aria-pressed',String(b.dataset.rView===view))});
     el('rNote').placeholder=bi('경계·염색 상태·추가 확인 사항을 기록하세요.','Record boundaries, staining quality, or items to check.');el('rNote').setAttribute('aria-label',bi('검토 메모','Review note'));
     c.setAttribute('aria-label',bi('연구 이미지. 분석 영역 지정 버튼을 누른 후 드래그하여 영역을 선택합니다.','Research image. Activate Select ROI and drag to select a region.'));
@@ -136,6 +136,7 @@
   };
   function workflow(next){++token;mode=next;document.querySelectorAll('[data-workflow]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workflow===mode)));el('migrationMain').hidden=mode!=='migration';el('researchMain').hidden=mode==='migration';el('export').hidden=mode!=='migration';el('help').hidden=mode!=='migration';if(mode!=='migration'){view='analysis';choose(selected[mode])}}
   document.querySelectorAll('[data-workflow]').forEach(b=>b.onclick=()=>workflow(b.dataset.workflow));
-  window.addEventListener('plab-language',()=>{if(mode!=='migration'){gallery();words()}else{document.querySelector('[data-workflow=culture]').textContent=bi('세포 배양','Cell culture');document.querySelector('[data-workflow=fibrosis]').textContent=bi('조직 섬유화','Tissue fibrosis');document.querySelector('[data-workflow=migration]').textContent=bi('세포 이동','Cell migration')}});
-  workflow('culture');
+  window.addEventListener('plab-language',()=>{if(mode!=='migration'){gallery();words()}else{document.querySelector('[data-workflow=culture]').textContent=bi('세포 배양 분석','Cell culture analysis');document.querySelector('[data-workflow=fibrosis]').textContent=bi('조직 섬유화 분석','Tissue fibrosis analysis');document.querySelector('[data-workflow=migration]').textContent=bi('세포 이미지 워크스페이스','Cell image workspace')}});
+  workflow('migration');
+  window.dispatchEvent(new Event('plab-language'));
 })();

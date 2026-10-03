@@ -6,7 +6,7 @@ A responsive research-image workspace for exploring cell images, measuring regio
 
 ## Workflows
 
-The default **Cell culture** workspace estimates cell-covered area using local intensity variation. **Tissue fibrosis** reviews candidate Sirius red or Masson-positive area divided by detected tissue, with adjustable color and tissue thresholds. **Cell migration** retains the original BBBC019 model demo, including its 3D surface and reference comparison.
+The **Cell culture analysis** tab estimates cell-covered area using local intensity variation. **Tissue fibrosis analysis** reviews candidate Sirius red or Masson-positive area divided by detected tissue, with adjustable color and tissue thresholds. The first and default **Cell image workspace** tab retains the original BBBC019 model demo, including 3D, 2D analysis, original images and reference comparison. Switching tabs preserves the existing workspace session.
 
 Culture and fibrosis are separate, untrained image-processing baselines. They are not validated company models. Culture coverage is not cell count or viability; stain-positive area is not a fibrosis grade. Real company workflows have not yet been confirmed.
 
