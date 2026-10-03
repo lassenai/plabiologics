@@ -1,0 +1,57 @@
+{
+  "article": "https://doi.org/10.1186/s13287-020-02029-3",
+  "authors": "Jae Yeon Kim, Jong Ho Choi, Ji Hye Jun, Sohae Park, Jieun Jung, Si Hyun Bae, Gi Jin Kim",
+  "year": 2020,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "retrieved": "2026-10-03",
+  "files": [
+    {
+      "file": "assets/research/kim2020-fig1.png",
+      "source": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13287-020-02029-3/MediaObjects/13287_2020_2029_Fig1_HTML.png",
+      "sha256": "3e02240b60c8828cde088bd9a742ab812b0b5717803112d024b2753bd2a1a7be"
+    },
+    {
+      "file": "assets/research/kim2020-fig5.png",
+      "source": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13287-020-02029-3/MediaObjects/13287_2020_2029_Fig5_HTML.png",
+      "sha256": "151128080205d550d5c1eda910f3d76af4cbc9b181f4140bf40c0fca9889fd33"
+    }
+  ],
+  "culture_crops_xywh": [
+    [
+      945,
+      150,
+      240,
+      130
+    ],
+    [
+      945,
+      380,
+      240,
+      130
+    ]
+  ],
+  "fibrosis_crops": {
+    "columns_x": [
+      81,
+      344,
+      609,
+      872
+    ],
+    "groups": [
+      "Con",
+      "NTx",
+      "TTx Naive",
+      "TTx PRL-1+"
+    ],
+    "width": 250,
+    "sirius_y_height": [
+      868,
+      208
+    ],
+    "masson_y_height": [
+      1094,
+      188
+    ]
+  },
+  "limitations": "Crops from published figures, not raw experimental images. Untrained baselines; no manual ground truth or validation. Values do not reproduce published whole-field quantification. No confirmed company workflow or affiliation."
+}

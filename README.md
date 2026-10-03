@@ -1,8 +1,20 @@
-# PLAbiologics · Cell Workspace
+# PLAbiologics · Research Workspace
 
 A responsive research-image workspace for exploring cell images, measuring regions, and recording reviews.
 
 **Live app:** https://lassenai.github.io/plabiologics/
+
+## Workflows
+
+The default **Cell culture** workspace estimates cell-covered area using local intensity variation. **Tissue fibrosis** reviews candidate Sirius red or Masson-positive area divided by detected tissue, with adjustable color and tissue thresholds. **Cell migration** retains the original BBBC019 model demo, including its 3D surface and reference comparison.
+
+Culture and fibrosis are separate, untrained image-processing baselines. They are not validated company models. Culture coverage is not cell count or viability; stain-positive area is not a fibrosis grade. Real company workflows have not yet been confirmed.
+
+The new workspaces include original/analysis/side-by-side views, drag-to-select ROI, original source figure viewing, local uploads, notes and CSV export with numerator, denominator, settings, crop, ROI and provenance. Use **Select ROI** then drag in the original view; **Full image** resets the region. Fibrosis uploads must be Sirius red or Masson images, with the corresponding stain selected explicitly. TIFF and whole-slide formats are not supported.
+
+Two culture examples and eight histology examples are selected regions from Kim et al. (2020), DOI: https://doi.org/10.1186/s13287-020-02029-3 (CC BY 4.0). Original published figures and exact crop coordinates are preserved under `assets/research/`. These are compressed figure crops, not raw research data. They lack reference masks, are not a time series, and cannot reproduce the paper's full-field statistics. See `THIRD_PARTY_NOTICES.md`.
+
+The research workspaces analyze copies with a maximum dimension of 512 pixels. Uploaded originals retain their original resolution. A 9 × 9 intensity standard deviation divided by 0.13 supplies the culture score. Fibrosis uses red dominance `(R - max(G,B))/255` or blue dominance `(B-R)/255` with `B > 0.9G`; only pixels with mean RGB intensity above 35 and below the selected ceiling enter its denominator. Default culture/color thresholds are 0.35/0.08. All values are uncalibrated review aids.
 
 ## Features
 
@@ -48,6 +60,9 @@ This creates `outputs/plab-ai-proposal.html`, a self-contained offline version. 
 - `assets/app.css`: responsive layout and styling.
 - `assets/app.js`: rendering, measurements, uploads, review notes, and exports.
 - `assets/i18n.js`: Korean/English translations and language preference.
+- `assets/research.js`: culture/fibrosis workflows, bilingual UI, ROI and exports.
+- `assets/research-analysis.js`: pure pixel-measurement baselines.
+- `assets/research/`: unmodified source figures and crop provenance.
 - `assets/data.js`: public samples, reference masks, and cached predictions.
 - `assets/validation-manifest.json`: dataset split and model validation record.
 - `scripts/build.py`: offline build.
@@ -55,7 +70,15 @@ This creates `outputs/plab-ai-proposal.html`, a self-contained offline version. 
 
 Local working files, intermediate artifacts, and generated offline output are excluded from Git.
 
-## Analysis scope
+## Verification
+
+```powershell
+node scripts/test-research.cjs
+```
+
+Checks denominator exclusions, zero-tissue handling, ROI boundaries, stain direction, threshold behavior and texture baselines using known pixel fixtures. This is software verification, not biological validation.
+
+## Cell migration analysis scope
 
 Public samples use cached predictions from a lightweight HistGradientBoostingClassifier trained on BBBC019v2 SN15 DA3 cell images. These are **not placenta-derived MSC images**. On 11 held-out images, the fixed threshold of 0.20 produced a mean Dice score of 0.804 and mean absolute area error of 1.38 percentage points.
 
