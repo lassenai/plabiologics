@@ -8,7 +8,7 @@ A responsive research-image workspace for exploring cell images, measuring regio
 
 - Korean and English interface with a persistent language preference.
 - Eleven public sample images and local PNG, JPG, or WebP uploads.
-- Rotatable 2.5D intensity surface, unobstructed original-image view, and reference-mask comparison.
+- Rotatable 2.5D intensity surface, 2D segmentation overlay, unobstructed original-image view, and reference-mask comparison.
 - Original-image dialog and download. Uploaded originals retain their resolution and original file bytes; packaged public samples are 256 × 256 pixels, not full-resolution experimental originals.
 - Adjustable segmentation threshold, gap area, Dice score, and area error where reference masks exist.
 - Device-local review notes and reviewed status.
@@ -29,7 +29,7 @@ Open http://127.0.0.1:8792 in your browser. GitHub Pages serves the root of the 
 1. Select **한국어** or **English** in the header.
 2. Choose a sample or select **Open image**.
 3. Use **Original image** to see the image without segmentation colors. Select **View original** to inspect and download the available source image.
-4. Explore **3D view** or **Compare masks**, then adjust the segmentation threshold.
+4. Explore **3D view**, **2D analysis**, or **Compare masks**, then adjust the segmentation threshold.
 5. Add a review note, mark the image as reviewed, and select **Export** to download a CSV.
 
 Uploads remain in memory for the current page session. Notes and language preferences use browser local storage and do not sync across devices. Images and notes are not uploaded to a server.

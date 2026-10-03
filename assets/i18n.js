@@ -1,6 +1,9 @@
 // Korean source strings are the stable keys for both interface and runtime messages.
 'use strict';
 const translations = {
+  "2D 분석": "2D analysis",
+  "2D · 분석 영역": "2D · segmentation overlay",
+  "청록: 분석 영역 · 판정 기준 조절 가능": "Teal: prediction · adjustable threshold",
   "PLAbiologics 처음으로": "PLAbiologics home",
   "언어 선택": "Choose language",
   "연구용 MVP": "Research MVP",
