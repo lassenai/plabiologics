@@ -1,52 +1,70 @@
 # PLAbiologics · Cell Workspace
 
-연구원이 이미지를 선택하고, 영역을 측정·비교하고, 검토 기록을 남기는 모바일 대응 MVP입니다.
+A responsive research-image workspace for exploring cell images, measuring regions, and recording reviews.
 
-배포 주소: https://lassenai.github.io/plabiologics/
+**Live app:** https://lassenai.github.io/plabiologics/
 
-## 주요 기능
+## Features
 
-- 공식 사이트의 PLAbiologics 로고와 작업 중심 화면
-- 공개 이미지 11장 선택, PNG/JPG/WebP 로컬 업로드
-- 회전 가능한 2.5D 밝기 표면, 2D 이미지, 수동 정답 비교
-- 영역 판정 기준·표시 조절, 면적·Dice 계산
-- 브라우저에 검토 메모와 완료 상태 저장
-- 현재 이미지 분석 결과·검토 메모 CSV 내보내기
+- Korean and English interface with a persistent language preference.
+- Eleven public sample images and local PNG, JPG, or WebP uploads.
+- Rotatable 2.5D intensity surface, unobstructed original-image view, and reference-mask comparison.
+- Original-image dialog and download. Uploaded originals retain their resolution and original file bytes; packaged public samples are 256 × 256 pixels, not full-resolution experimental originals.
+- Adjustable segmentation threshold, gap area, Dice score, and area error where reference masks exist.
+- Device-local review notes and reviewed status.
+- CSV export of measurements, analysis provenance, and review notes.
 
-## 실행과 빌드
+## Quick start
 
-의존성 설치나 API 키 없이 동작하는 정적 HTML/CSS/JavaScript 앱입니다.
+No dependencies or API keys are required. From the repository root, run:
 
 ```powershell
 python -m http.server 8792 --bind 127.0.0.1
 ```
 
-http://127.0.0.1:8792 에서 실행합니다. GitHub Pages는 main 브랜치 루트에서 제공합니다.
+Open http://127.0.0.1:8792 in your browser. GitHub Pages serves the root of the `main` branch.
+
+## Usage
+
+1. Select **한국어** or **English** in the header.
+2. Choose a sample or select **Open image**.
+3. Use **Original image** to see the image without segmentation colors. Select **View original** to inspect and download the available source image.
+4. Explore **3D view** or **Compare masks**, then adjust the segmentation threshold.
+5. Add a review note, mark the image as reviewed, and select **Export** to download a CSV.
+
+Uploads remain in memory for the current page session. Notes and language preferences use browser local storage and do not sync across devices. Images and notes are not uploaded to a server.
+
+## Offline build
 
 ```powershell
 python scripts/build.py
 ```
 
-빌드하면 `outputs/plab-ai-proposal.html`에 단일 파일 버전이 생성됩니다. 해당 파일은 오프라인 브라우저에서도 열 수 있습니다. `work/demo_data.json`이 존재하면 패키지 데이터도 갱신하고, 없으면 저장소의 `assets/data.js`를 사용합니다.
+This creates `outputs/plab-ai-proposal.html`, a self-contained offline version. If local `work/demo_data.json` exists, the build refreshes packaged data from it; otherwise it uses tracked `assets/data.js`. Python standard library only.
 
-## 소스
+## Source structure
 
-- `index.html`: 작업 화면
-- `assets/app.css`: 반응형 디자인
-- `assets/app.js`: 분석·시각화·검토·내보내기
-- `assets/data.js`: 공개 샘플·정답·저장된 모델 예측
-- `assets/validation-manifest.json`: 데이터 분할과 모델 검증 기록
-- `scripts/build.py`: 오프라인 파일 생성
-- `THIRD_PARTY_NOTICES.md`: 데이터·로고 출처와 권리
+- `index.html`: workspace and dialogs.
+- `assets/app.css`: responsive layout and styling.
+- `assets/app.js`: rendering, measurements, uploads, review notes, and exports.
+- `assets/i18n.js`: Korean/English translations and language preference.
+- `assets/data.js`: public samples, reference masks, and cached predictions.
+- `assets/validation-manifest.json`: dataset split and model validation record.
+- `scripts/build.py`: offline build.
+- `THIRD_PARTY_NOTICES.md`: dataset and logo attribution.
 
-이전 기획안·중간 자료·원본 ZIP은 로컬 `work/`에 보존하며 공개 저장소에 포함하지 않습니다.
+Local working files, intermediate artifacts, and generated offline output are excluded from Git.
 
-## 분석 범위
+## Analysis scope
 
-공개 샘플은 BBBC019v2 SN15 DA3 세포 영상으로 학습된 경량 모델의 저장된 예측입니다. 태반유래 MSC 데이터가 아닙니다. 평가 11장의 고정 기준 0.20에서 평균 Dice 0.804, 평균 면적 절대 오차 1.38%p입니다.
+Public samples use cached predictions from a lightweight HistGradientBoostingClassifier trained on BBBC019v2 SN15 DA3 cell images. These are **not placenta-derived MSC images**. On 11 held-out images, the fixed threshold of 0.20 produced a mean Dice score of 0.804 and mean absolute area error of 1.38 percentage points.
 
-새 이미지에는 로컬 밝기 변동 기반 텍스처 기준선을 적용합니다. 샘플 모델 추론과 다르며 정답 성능 지표를 표시하지 않습니다. 업로드와 메모는 외부 서버로 전송되지 않습니다. 메모는 기기·브라우저별로 저장됩니다.
+New uploads use a browser-local intensity-variation texture baseline, not inference from the sample model. Analysis copies preserve aspect ratio and have a maximum dimension of 256 pixels. Original uploads remain available separately. Reference performance metrics are unavailable for uploads.
 
-3D 화면은 밝기를 높이로 변환한 2.5D 시각화입니다. 세포 두께나 조직 깊이를 복원하지 않습니다. 제품 효능·임상·생산 적용 검증을 의미하지 않습니다. Jev·LLM API는 연결하지 않았습니다.
+The 3D view is a **2.5D intensity visualization**, not a reconstruction of cell thickness or tissue depth. Gap area is not cell viability or therapeutic efficacy. Scores are not calibrated probabilities. No Jev or LLM API is connected.
 
-데이터는 CC BY 3.0이며 상세 출처는 THIRD_PARTY_NOTICES.md를 참조하세요. 회사 로고의 권리는 해당 소유자에게 있습니다. 이 프로젝트는 독립 개발한 연구용 프로토타입입니다.
+This is an independently developed research MVP, not an official company service or a clinically or production-validated product.
+
+## Attribution
+
+The sample dataset is licensed under CC BY 3.0; see `THIRD_PARTY_NOTICES.md` for credits and modifications. The PLAbiologics logo belongs to its respective owner and was sourced from the official website.

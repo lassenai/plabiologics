@@ -7,7 +7,7 @@ if source.exists():
     (root/'assets/data.js').write_text('window.PLAB_DATA = '+source.read_text(encoding='utf-8')+';\n',encoding='utf-8')
 html=(root/'index.html').read_text(encoding='utf-8')
 html=html.replace('<link rel="stylesheet" href="assets/app.css">','<style>'+(root/'assets/app.css').read_text(encoding='utf-8')+'</style>')
-for script in ['data','app']:
+for script in ['i18n','data','app']:
     html=html.replace(f'<script src="assets/{script}.js"></script>','<script>'+(root/f'assets/{script}.js').read_text(encoding='utf-8')+'</script>')
 html=html.replace('src="assets/plabiologics-logo.png"','src="data:image/png;base64,'+base64.b64encode((root/'assets/plabiologics-logo.png').read_bytes()).decode()+'"')
 (root/'outputs').mkdir(exist_ok=True)
