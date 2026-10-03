@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[1]
 source=root/'work/demo_data.json'
 if source.exists():
     (root/'assets/data.js').write_text('window.PLAB_DATA = '+source.read_text(encoding='utf-8')+';\n',encoding='utf-8')
-html=(root/'index.html').read_text(encoding='utf-8')
+html=(root/'index.html').read_text(encoding='utf-8').replace('?v=2d-analysis', '')
 html=html.replace('<link rel="stylesheet" href="assets/app.css">','<style>'+(root/'assets/app.css').read_text(encoding='utf-8')+'</style>')
 for script in ['i18n','data','app']:
     html=html.replace(f'<script src="assets/{script}.js"></script>','<script>'+(root/f'assets/{script}.js').read_text(encoding='utf-8')+'</script>')
