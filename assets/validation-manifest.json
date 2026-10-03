@@ -1,0 +1,725 @@
+{
+  "summary": {
+    "source": "https://data.broadinstitute.org/bbbc/BBBC019/SN15.zip",
+    "sourcePage": "https://bbbc.broadinstitute.org/BBBC019",
+    "license": "CC BY 3.0",
+    "retrieved": "2026-10-03",
+    "sha256": "7269b6a46d5430351ca788452dc07b1fc2a83e652a5509751f640a35d019c48b",
+    "model": "HistGradientBoostingClassifier",
+    "seed": 42,
+    "size": 256,
+    "splits": {
+      "train": [
+        1,
+        5,
+        7,
+        8,
+        9,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        37,
+        40
+      ],
+      "validation": [
+        14,
+        15,
+        17,
+        22,
+        39
+      ],
+      "test": [
+        2,
+        4,
+        6,
+        10,
+        16,
+        38
+      ]
+    },
+    "counts": {
+      "train": 32,
+      "validation": 11,
+      "test": 11
+    },
+    "selectedThreshold": 0.2,
+    "features": "intensity; local mean/std at 3,7,15 px; Sobel magnitude and local means at 7,15 px",
+    "versions": {
+      "numpy": "2.5.1",
+      "sklearn": "1.9.0",
+      "scipy": "1.18.1"
+    },
+    "testMeanDice": 0.8040003692911675,
+    "testMeanAreaError": 1.3828624378551135
+  },
+  "files": [
+    {
+      "id": "20_00",
+      "group": 20,
+      "split": "train",
+      "original": [
+        1031,
+        1024
+      ]
+    },
+    {
+      "id": "23_00",
+      "group": 23,
+      "split": "train",
+      "original": [
+        1031,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L10_Sum00",
+      "group": 10,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L10_Sum32",
+      "group": 10,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L12_Sum00",
+      "group": 12,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L12_Sum17",
+      "group": 12,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L12_Sum40",
+      "group": 12,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L13_Sum00",
+      "group": 13,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L13_Sum65",
+      "group": 13,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L14_Sum00",
+      "group": 14,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L14_Sum31",
+      "group": 14,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L15_Sum00",
+      "group": 15,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L15_Sum50",
+      "group": 15,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L16_Sum00",
+      "group": 16,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L16_Sum30",
+      "group": 16,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L17_Sum00",
+      "group": 17,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L17_Sum32",
+      "group": 17,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L17_Sum44",
+      "group": 17,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L18_Sum00",
+      "group": 18,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L18_Sum43",
+      "group": 18,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L19_Sum00",
+      "group": 19,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L19_Sum32",
+      "group": 19,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L1_Sum00",
+      "group": 1,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L1_Sum12",
+      "group": 1,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L20_Sum27",
+      "group": 20,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L21_Sum00",
+      "group": 21,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L21_Sum33",
+      "group": 21,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L21_Sum38",
+      "group": 21,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L22_Sum00",
+      "group": 22,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L22_Sum54",
+      "group": 22,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L23_Sum00",
+      "group": 23,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L23_Sum40",
+      "group": 23,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L24_Sum00",
+      "group": 24,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L24_Sum40",
+      "group": 24,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L2_Sum15",
+      "group": 2,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L37_Sum00",
+      "group": 37,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L37_Sum14",
+      "group": 37,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L38_Sum00",
+      "group": 38,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L38_Sum16",
+      "group": 38,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L39_Sum00",
+      "group": 39,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L39_Sum10",
+      "group": 39,
+      "split": "validation",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L40_Sum00",
+      "group": 40,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L40_Sum10",
+      "group": 40,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L4_Sum00",
+      "group": 4,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L4_Sum20",
+      "group": 4,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L5_Sum00",
+      "group": 5,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L5_Sum19",
+      "group": 5,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L7_Sum00",
+      "group": 7,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L7_Sum99",
+      "group": 7,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L8_Sum00",
+      "group": 8,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L8_Sum51",
+      "group": 8,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "DIC_SN_15_L9_Sum00",
+      "group": 9,
+      "split": "train",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "dic_SN_15_L6_Sum00",
+      "group": 6,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "dic_SN_15_L6_Sum23",
+      "group": 6,
+      "split": "test",
+      "original": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "curve": [
+    {
+      "threshold": 0.1,
+      "meanDice": 0.7917869237405949,
+      "meanAreaError": 2.4393255060369317
+    },
+    {
+      "threshold": 0.15,
+      "meanDice": 0.8025825226954411,
+      "meanAreaError": 1.7264626242897727
+    },
+    {
+      "threshold": 0.2,
+      "meanDice": 0.8040003692911675,
+      "meanAreaError": 1.3828624378551135
+    },
+    {
+      "threshold": 0.25,
+      "meanDice": 0.8004073224686212,
+      "meanAreaError": 1.3065684925426135
+    },
+    {
+      "threshold": 0.3,
+      "meanDice": 0.7972035690217499,
+      "meanAreaError": 1.64337158203125
+    },
+    {
+      "threshold": 0.35,
+      "meanDice": 0.7923655713253676,
+      "meanAreaError": 2.0070856267755683
+    },
+    {
+      "threshold": 0.4,
+      "meanDice": 0.7849439529273429,
+      "meanAreaError": 2.3477727716619317
+    },
+    {
+      "threshold": 0.45,
+      "meanDice": 0.7736265678400631,
+      "meanAreaError": 2.704134854403409
+    },
+    {
+      "threshold": 0.5,
+      "meanDice": 0.7587499601644256,
+      "meanAreaError": 3.0335859818892046
+    },
+    {
+      "threshold": 0.55,
+      "meanDice": 0.744003344968645,
+      "meanAreaError": 3.3397327769886362
+    },
+    {
+      "threshold": 0.6,
+      "meanDice": 0.727346303397603,
+      "meanAreaError": 3.6275690252130683
+    },
+    {
+      "threshold": 0.65,
+      "meanDice": 0.7119441117797883,
+      "meanAreaError": 3.9661754261363638
+    },
+    {
+      "threshold": 0.7,
+      "meanDice": 0.6937068644760955,
+      "meanAreaError": 4.310330477627841
+    },
+    {
+      "threshold": 0.75,
+      "meanDice": 0.6729821432881795,
+      "meanAreaError": 4.707058993252841
+    },
+    {
+      "threshold": 0.8,
+      "meanDice": 0.6487206513487573,
+      "meanAreaError": 5.173839222301137
+    },
+    {
+      "threshold": 0.85,
+      "meanDice": 0.614924071345837,
+      "meanAreaError": 5.855768377130682
+    },
+    {
+      "threshold": 0.9,
+      "meanDice": 0.5686031011836367,
+      "meanAreaError": 6.937616521661932
+    }
+  ],
+  "testMetrics": [
+    {
+      "id": "DIC_SN_15_L10_Sum00",
+      "dice": 0.9713495853229455,
+      "iou": 0.9442951380405571,
+      "area": 35.7025146484375,
+      "truthArea": 37.1551513671875,
+      "areaError": 1.45263671875
+    },
+    {
+      "id": "DIC_SN_15_L10_Sum32",
+      "dice": 0.8854877628403999,
+      "iou": 0.7945069899789682,
+      "area": 10.41259765625,
+      "truthArea": 11.72027587890625,
+      "areaError": 1.30767822265625
+    },
+    {
+      "id": "DIC_SN_15_L16_Sum00",
+      "dice": 0.9643962848297214,
+      "iou": 0.9312406576980568,
+      "area": 42.84515380859375,
+      "truthArea": 43.89801025390625,
+      "areaError": 1.0528564453125
+    },
+    {
+      "id": "DIC_SN_15_L16_Sum30",
+      "dice": 0.9128272943665697,
+      "iou": 0.8396341166739649,
+      "area": 29.12750244140625,
+      "truthArea": 28.56597900390625,
+      "areaError": 0.5615234375
+    },
+    {
+      "id": "DIC_SN_15_L2_Sum15",
+      "dice": 0.5389453313981616,
+      "iou": 0.36887417218543045,
+      "area": 3.04107666015625,
+      "truthArea": 3.26690673828125,
+      "areaError": 0.225830078125
+    },
+    {
+      "id": "DIC_SN_15_L38_Sum00",
+      "dice": 0.9645497409628034,
+      "iou": 0.9315268720485721,
+      "area": 26.7974853515625,
+      "truthArea": 25.628662109375,
+      "areaError": 1.1688232421875
+    },
+    {
+      "id": "DIC_SN_15_L38_Sum16",
+      "dice": 0.7563291139240507,
+      "iou": 0.6081424936386769,
+      "area": 12.6617431640625,
+      "truthArea": 11.4471435546875,
+      "areaError": 1.214599609375
+    },
+    {
+      "id": "DIC_SN_15_L4_Sum00",
+      "dice": 0.8409539178769948,
+      "iou": 0.7255569306930693,
+      "area": 11.07330322265625,
+      "truthArea": 14.4561767578125,
+      "areaError": 3.38287353515625
+    },
+    {
+      "id": "DIC_SN_15_L4_Sum20",
+      "dice": 0.5015479876160991,
+      "iou": 0.3347107438016529,
+      "area": 1.678466796875,
+      "truthArea": 4.23583984375,
+      "areaError": 2.557373046875
+    },
+    {
+      "id": "dic_SN_15_L6_Sum00",
+      "dice": 0.9010362133083005,
+      "iou": 0.8198961824035744,
+      "area": 21.6400146484375,
+      "truthArea": 20.62225341796875,
+      "areaError": 1.01776123046875
+    },
+    {
+      "id": "dic_SN_15_L6_Sum23",
+      "dice": 0.6065808297567954,
+      "iou": 0.4353182751540041,
+      "area": 7.0343017578125,
+      "truthArea": 5.7647705078125,
+      "areaError": 1.26953125
+    }
+  ]
+}

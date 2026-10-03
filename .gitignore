@@ -1,0 +1,9 @@
+work/
+.playwright-mcp/
+outputs/
+__pycache__/
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
